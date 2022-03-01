@@ -1,6 +1,7 @@
 from django.db import models
+from ._EntityTrait import EntityTrait
 
-class Cashier(models.Model):
+class Cashier(EntityTrait):
     
     balance = models.FloatField()
     
