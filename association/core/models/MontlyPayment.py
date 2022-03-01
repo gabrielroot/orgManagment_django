@@ -6,7 +6,7 @@ from core.models import Partner
 class MontlyPayment(EntityTrait):
     
     paymenDate = models.DateTimeField(default=datetime.now)
-    dueDate = models.DateTimeField(null=True)
+    dueDate = models.DateTimeField(blank=True, null=True)
     value = models.FloatField()
     partner = models.ForeignKey(Partner, on_delete=models.CASCADE)
     

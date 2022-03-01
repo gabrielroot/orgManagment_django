@@ -13,7 +13,7 @@ class Demand(EntityTrait):
     
     message = models.CharField(max_length=200)
     status = models.CharField(max_length=9, choices=STATUS_CHOICES)
-    teasurer = models.ForeignKey(Teasurer, null=True, on_delete=models.SET_NULL)
+    teasurer = models.ForeignKey(Teasurer, blank=True, null=True, on_delete=models.SET_NULL)
     partner = models.ForeignKey(Partner, on_delete=models.CASCADE)
     
     class Meta:

@@ -9,7 +9,7 @@ class Trip(EntityTrait):
     origin = models.CharField(max_length=200)
     destiny = models.CharField(max_length=200)
     startDate = models.DateTimeField(default=datetime.now)
-    endDate = models.DateTimeField(null=True)
+    endDate = models.DateTimeField(blank=True, null=True)
     kilometer = models.FloatField()
     vehicle = models.ForeignKey(Vehicle, on_delete=models.CASCADE)
     

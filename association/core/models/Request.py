@@ -12,7 +12,7 @@ class Request(EntityTrait):
     message = models.CharField(max_length=200)
     status = models.CharField(max_length=9, choices=STATUS_CHOICES)
     partner = models.ForeignKey(Partner, on_delete=models.CASCADE)
-    president = models.ForeignKey(President, null=True, on_delete=models.SET_NULL)
+    president = models.ForeignKey(President, blank=True, null=True, on_delete=models.SET_NULL)
     
     class Meta:
         db_table = 'request'

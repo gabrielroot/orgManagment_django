@@ -6,7 +6,7 @@ from core.models import Vehicle, Member
 class UseVehicle(EntityTrait):
     
     justification = models.CharField(max_length=200)
-    member = models.ForeignKey(Member, null=True, on_delete=models.SET_NULL)
+    member = models.ForeignKey(Member, blank=True, null=True, on_delete=models.SET_NULL)
     vehicle = models.ForeignKey(Vehicle, on_delete=models.CASCADE)
     
     class Meta:
